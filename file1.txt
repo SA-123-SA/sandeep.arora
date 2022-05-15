@@ -4,7 +4,7 @@ provider "aws" {
   secret_key = "vT9K/VWN+E+Ajqr8/AY373d2Z7f16d16LeiER04u"
 }
 
-resource "aws_s3_bucket" "bucket1w2w2w2w2w2" {
+resource "aws_s3_bucket" "bucket1w2w3w" {
   
   acl    = "public-read"
   versioning {
@@ -12,7 +12,7 @@ enabled=true
 }
 }
 resource "aws_s3_bucket_object" "bucket1" {
-   bucket = aws_s3_bucket.bucket1w2w2w2w2w2.bucket
+   bucket = aws_s3_bucket.bucket1w2w3w.bucket
    key = "mypic"
    acl = "public-read"
    source = "C:UsersSandeep AroraPicturesDSC00251.JPG"
