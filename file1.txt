@@ -1,1 +1,24 @@
-My Name is Sandeep Arora
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = "AKIAU3H2EQAPG7JR6D4V"
+  secret_key = "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"
+}
+
+resource "aws_s3_bucket" "bucket1w2w2w2w2w2" {
+  
+  acl    = "public-read"
+  versioning {
+enabled=true
+}
+}
+resource "aws_s3_bucket_object" "bucket1" {
+   bucket = aws_s3_bucket.bucket1w2w2w2w2w2.bucket
+   key = "mypic"
+   acl = "public-read"
+   source = "C:UsersSandeep AroraPicturesDSC00251.JPG"
+   etag = filemd5("C:UsersSandeep AroraPicturesDSC00251.JPG")
+tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
